@@ -13,7 +13,9 @@ The goal of GDX Controller is to make the using of controllers even easier in Li
 
 1. Better investigate Controller types
 2. Add default mappings for various controllers. I.e. LogitechController and/or XBoxController will have a pre-configured Controls mapping.
-3. Input combination checking to include timing between keypresses. i.e. ↓ ↘ → A
+3. Input combination checking to include timing between keypresses. i.e. `↓ ↘ → A`
+
+
 ## Maven
 
 ```xml
