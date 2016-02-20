@@ -13,6 +13,9 @@ public enum MyGameControls implements Controls {
     DPAD_LEFT,
     DPAD_RIGHT,
 
+    RIGHT_JOYSTICK_VERTICAL,
+    RIGHT_JOYSTICK_HORIZONTAL,
+
     START,
     SELECT,
 

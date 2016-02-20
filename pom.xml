@@ -8,7 +8,7 @@
     <artifactId>gdx-controller</artifactId>
     <name>LibGDX Controller</name>
     <description>A library to help with controller management in LibGDX.</description>
-    <version>1.0</version>
+    <version>1.1</version>
     <url>https://github.com/kennycason/gdx-controller</url>
 
     <properties>

@@ -38,6 +38,10 @@ public class MyGameSreen {
         if (controller.isPressed(MyGameControls.A)) {
             // shoot!
         }
+        final float joystickVertical = controller.getAxis(MyGameControls.RIGHT_JOYSTICK_VERTICAL);
+        final float joystickHorizontal = controller.getAxis(MyGameControls.RIGHT_JOYSTICK_HORIZONTAL);
+        // do something with the vertical and horizontal values. perhaps take the unit vector and use
+        // as a more precise facing vector
     }
 
 }

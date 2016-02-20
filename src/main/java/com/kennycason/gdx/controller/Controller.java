@@ -21,6 +21,8 @@ public abstract class Controller<V extends Controls> {
 
     public abstract boolean isPressed(V control);
 
+    public abstract float getAxis(V control);
+
     public long when(V control) {
         return lastPressed.get(control, 0L);
     }

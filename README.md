@@ -36,6 +36,9 @@ public enum MyGameControls implements Controls {
     DPAD_DOWN,
     DPAD_LEFT,
     DPAD_RIGHT,
+    
+    RIGHT_JOYSTICK_VERTICAL,
+    RIGHT_JOYSTICK_HORIZONTAL,
 
     START,
     SELECT,
@@ -105,12 +108,17 @@ public class MyControllerFactory {
         buttonMapper.map(MyGameControls.R1, 5);
         buttonMapper.map(MyGameControls.R2, 7);
 
+        // treating the axis / joystick as a typical d-pad
         final AxisMapper<MyGameControls> axisMapper = new AxisMapper<>();
         axisMapper.map(MyGameControls.DPAD_UP, new Axis(1, -0.75f));
         axisMapper.map(MyGameControls.DPAD_DOWN, new Axis(1, 0.75f));
         axisMapper.map(MyGameControls.DPAD_LEFT, new Axis(0, -0.75f));
         axisMapper.map(MyGameControls.DPAD_RIGHT, new Axis(0, 0.75f));
 
+        // hook in joystick for raw usage, i.e you need precise control over the joystick's position.
+        axisMapper.map(MyGameControls.RIGHT_JOYSTICK_VERTICAL, new Axis(3));
+        axisMapper.map(MyGameControls.RIGHT_JOYSTICK_HORIZONTAL, new Axis(2));
+        
         return new LogitechController<>(0, buttonMapper, axisMapper);
     }
 
@@ -151,6 +159,10 @@ public class MyGameSreen {
         if (controller.isPressed(MyGameControls.A)) {
             // shoot!
         }
+        final float joystickVertical = controller.getAxis(MyGameControls.RIGHT_JOYSTICK_VERTICAL);
+        final float joystickHorizontal = controller.getAxis(MyGameControls.RIGHT_JOYSTICK_HORIZONTAL);
+        // do something with the vertical and horizontal values. perhaps take the unit vector and use 
+        // as a more precise facing vector
     }
     
 }

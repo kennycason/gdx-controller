@@ -22,4 +22,9 @@ public class KeyboardController<V extends Controls> extends Controller<V> {
         return pressed;
     }
 
+    @Override
+    public float getAxis(V control) {
+        return 0f;
+    }
+
 }

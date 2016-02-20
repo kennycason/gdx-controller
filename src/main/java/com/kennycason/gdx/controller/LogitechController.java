@@ -49,4 +49,13 @@ public class LogitechController<V extends Controls> extends Controller<V> {
         if (pressed) { record(control); }
         return pressed;
     }
+
+    @Override
+    public float getAxis(V control) {
+        final Axis axis = this.axisMapper.get(control);
+        if (axis == null) { return 0f; }
+
+        return controller.getAxis(axis.id);
+    }
+
 }
