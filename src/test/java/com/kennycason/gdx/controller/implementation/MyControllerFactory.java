@@ -68,8 +68,8 @@ public class MyControllerFactory {
         axisMapper.map(MyGameControls.DPAD_RIGHT, new Axis(0, 0.75f));
 
         // hook in joystick for raw usage, i.e you need precise control over the joystick's position.
-        axisMapper.map(MyGameControls.RIGHT_JOYSTICK_VERTICAL, new Axis(3));
-        axisMapper.map(MyGameControls.RIGHT_JOYSTICK_HORIZONTAL, new Axis(2));
+        axisMapper.map(MyGameControls.RIGHT_JOYSTICK_VERTICAL, new Axis(3, 0.001f));
+        axisMapper.map(MyGameControls.RIGHT_JOYSTICK_HORIZONTAL, new Axis(2, 0.001f));
 
         return new LogitechController<>(0, buttonMapper, axisMapper);
     }

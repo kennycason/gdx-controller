@@ -55,7 +55,11 @@ public class LogitechController<V extends Controls> extends Controller<V> {
         final Axis axis = this.axisMapper.get(control);
         if (axis == null) { return 0f; }
 
-        return controller.getAxis(axis.id);
+        final float axisValue =  controller.getAxis(axis.id);
+        if (Math.abs(axisValue) > axis.threshold) {
+            return axisValue;
+        }
+        return 0f;
     }
 
 }

@@ -22,7 +22,7 @@ The goal of GDX Controller is to make the using of controllers even easier in Li
 <dependency>
     <groupId>com.kennycason</groupId>
     <artifactId>gdx-controller</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
 </dependency>
 ```
 
@@ -116,8 +116,8 @@ public class MyControllerFactory {
         axisMapper.map(MyGameControls.DPAD_RIGHT, new Axis(0, 0.75f));
 
         // hook in joystick for raw usage, i.e you need precise control over the joystick's position.
-        axisMapper.map(MyGameControls.RIGHT_JOYSTICK_VERTICAL, new Axis(3));
-        axisMapper.map(MyGameControls.RIGHT_JOYSTICK_HORIZONTAL, new Axis(2));
+        axisMapper.map(MyGameControls.RIGHT_JOYSTICK_VERTICAL, new Axis(3, 0.01f));
+        axisMapper.map(MyGameControls.RIGHT_JOYSTICK_HORIZONTAL, new Axis(2, 0.01f));
         
         return new LogitechController<>(0, buttonMapper, axisMapper);
     }
